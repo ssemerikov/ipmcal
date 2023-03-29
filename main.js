@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       container: document.querySelector("#container"),
       imageTargetSrc: 'assets/targets.mind',
       uiScanning: "#scanning",
-      uiLoading: "no",
+      //uiLoading: "no",
     });
     const {renderer, cssRenderer, scene, cssScene, camera} = mindarThree;
 
