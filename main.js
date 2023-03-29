@@ -43,10 +43,26 @@ document.addEventListener("DOMContentLoaded", () => {
       "assets/facemask.png",
     ]);
 
+    const gallery = await loadTextures([
+      "assets/photos/20230323_093632.jpg",
+      "assets/photos/20230323_095029.jpg",
+      "assets/photos/20230323_132813.jpg",
+      "assets/photos/20230323_132834.jpg",
+      "assets/photos/20230323_132841.jpg",
+      "assets/photos/20230323_132910.jpg",
+      "assets/photos/20230323_132947.jpg",
+    ]);
+
     const planeGeometry = new THREE.PlaneGeometry(1, 0.552);
     const cardGeometry = new THREE.PlaneGeometry(1, 1205/850);
+    const photoGeometry = new THREE.PlaneGeometry(1, 4000/1844);
     const cardMaterial = new THREE.MeshBasicMaterial({map: cardTexture});
     const card = new THREE.Mesh(cardGeometry, cardMaterial);
+
+    let currentPhoto = 0;
+    const photoMaterial = new THREE.MeshBasicMaterial({map: gallery[currentPhoto]});
+    const photo = new THREE.Mesh(photoGeometry, photoMaterial);
+    photo.position.set(1.35, 0.25, 0);
 
     const iconGeometry = new THREE.CircleGeometry(0.075, 32);
     const emailMaterial = new THREE.MeshBasicMaterial({map: emailTexture});
@@ -98,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const anchor = mindarThree.addAnchor(0);
     anchor.group.add(avatar.scene);
     anchor.group.add(card);
+    anchor.group.add(photo);
     anchor.group.add(emailIcon);
     anchor.group.add(webIcon);
     anchor.group.add(profileIcon);
@@ -198,6 +215,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       avatar.scene.position.set(0.40, -0.45, -1.25+2*Math.sin(elapsed/3));
+      currentPhoto += delta/5;
+      photoMaterial.map = gallery[Math.round(currentPhoto) % gallery.length];
 
       renderer.render(scene, camera);
       cssRenderer.render(cssScene, camera);
