@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "assets/left.jpg",
       "assets/right.jpg",
       "assets/34414016404_424abde5f9_b.jpg",
-      "assets/tryon.png",
-      "assets/facemask.png",
+      "assets/tryon.jpg",
+      "assets/facemask.jpg",
     ]);
 
     const gallery = await loadTextures([
