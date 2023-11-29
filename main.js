@@ -64,7 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const photo = new THREE.Mesh(photoGeometry, photoMaterial);
     photo.position.set(1.35, 0.25, 0);
 
-    const iconGeometry = new THREE.CircleGeometry(0.150, 32);
+    //const iconGeometry = new THREE.CircleGeometry(0.075, 32);
+    const iconGeometry = new THREE.CircleGeometry(0.15, 32);
     const emailMaterial = new THREE.MeshBasicMaterial({map: emailTexture});
     const webMaterial = new THREE.MeshBasicMaterial({map: webTexture});
     const profileMaterial = new THREE.MeshBasicMaterial({map: profileTexture});
