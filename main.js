@@ -94,7 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     profileIcon.position.set(-0.54, -0.90, 0);
     webIcon.position.set(-0.18, -0.90, 0);
+    webIcon.visible = false;
     emailIcon.position.set(0.18, -0.90, 0);
+    emailIcon.visible = false;
     locationIcon.position.set(0.54, -0.90, 0);
 
     const portfolioGroup = new THREE.Group();
@@ -200,13 +202,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	    }
 	  } else if (o === webIcon) {
 	    textObj.visible = true;
-	    textElement.innerHTML = "<a href='https://kdpu.edu.ua/informatyky-ta-prykladnoi-matematyky' target='_blank'>https://kdpu.edu.ua/informatyky-ta-prykladnoi-matematyky</a>";
+	    textElement.innerHTML = "<a href='https://www.facebook.com/ipmkdpu' target='_blank'>https://www.facebook.com/ipmkdpu</a>";
 	  } else if (o === emailIcon) {
 	    textObj.visible = true;
 	    textElement.innerHTML = "<a href='mailto:kafedra.ipm@gmail.com'>kafedra.ipm@gmail.com</a>";
 	  } else if (o === profileIcon) {
 	    textObj.visible = true;
-	    textElement.innerHTML = "<a href='https://www.facebook.com/ipmkdpu' target='_blank'>https://www.facebook.com/ipmkdpu</a>";
+	    textElement.innerHTML = "<a href='https://kdpu.edu.ua/informatyky-ta-prykladnoi-matematyky' target='_blank'>https://kdpu.edu.ua/informatyky-ta-prykladnoi-matematyky</a>";
 	  } else if (o === locationIcon) {
 	    textObj.visible = true;
 	    textElement.innerHTML = "<a href='https://goo.gl/maps/FEuUc3FR4byB1UGL7' target='_blank'>Кривий Ріг, пр. Гагаріна, буд. 54, ауд. 203</a>";
