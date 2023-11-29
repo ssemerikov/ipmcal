@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     photo.position.set(1.35, 0.25, 0);
 
     //const iconGeometry = new THREE.CircleGeometry(0.075, 32);
-    const iconGeometry = new THREE.CircleGeometry(0.15, 32);
+    const iconGeometry = new THREE.CircleGeometry(0.2, 32);
     const emailMaterial = new THREE.MeshBasicMaterial({map: emailTexture});
     const webMaterial = new THREE.MeshBasicMaterial({map: webTexture});
     const profileMaterial = new THREE.MeshBasicMaterial({map: profileTexture});
@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioItem2 = new THREE.Mesh(planeGeometry, portfolioItem2Material); 
 
     profileIcon.position.set(-0.54, -0.90, 0);
-    webIcon.position.set(-1.18, -0.90, 0);
-    emailIcon.position.set(1.18, -0.90, 0);
+    webIcon.position.set(-0.18, -0.90, 0);
+    emailIcon.position.set(0.18, -0.90, 0);
     locationIcon.position.set(0.54, -0.90, 0);
 
     const portfolioGroup = new THREE.Group();
