@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioItem2 = new THREE.Mesh(planeGeometry, portfolioItem2Material); 
 
     profileIcon.position.set(-0.54, -0.90, 0);
-    webIcon.position.set(-0.18, -0.90, 0);
-    emailIcon.position.set(0.18, -0.90, 0);
+    webIcon.position.set(-1.18, -0.90, 0);
+    emailIcon.position.set(1.18, -0.90, 0);
     locationIcon.position.set(0.54, -0.90, 0);
 
     const portfolioGroup = new THREE.Group();
