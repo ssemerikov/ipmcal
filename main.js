@@ -107,10 +107,24 @@ document.addEventListener("DOMContentLoaded", () => {
     leftIcon.position.set(-0.7, 0, 0);
     rightIcon.position.set(0.7, 0, 0);
 
+/*
     const avatar = await loadGLTF("assets/gaming_desktop_pc_blend_file.glb");
     avatar.scene.scale.set(0.2, 0.2, 0.2);
     avatar.scene.rotation.set(0, -90*Math.PI/180, 0);
     avatar.scene.position.set(0.40, -0.45, -1.25);
+*/
+
+    const avatar = await loadGLTF("https://raw.githubusercontent.com/aframevr/assets/master/test-models/models/glTF-2.0/brainstem/BrainStem.gltf");
+    avatar.scene.scale.set(1.0, 1.0, 1.0);
+    //avatar.scene.rotation.set(0, -90*Math.PI/180, 0);
+    avatar.scene.position.set(-1.1, -0.45, -0.2);
+
+    const mixer = new THREE.AnimationMixer(avatar.scene);
+    if(avatar.animations.length != 0) {
+	for(var i=0; i< avatar.animations.length; i++)
+		mixer.clipAction(avatar.animations[i]).play();
+    }
+
 
     const anchor = mindarThree.addAnchor(0);
     anchor.group.add(avatar.scene);
@@ -210,12 +224,15 @@ document.addEventListener("DOMContentLoaded", () => {
     renderer.setAnimationLoop(() => {
       const delta = clock.getDelta();
       const elapsed = clock.getElapsedTime();
+
+      mixer.update(delta);
+
       const iconScale = 1 + 0.2 * Math.sin(elapsed*3);
       [webIcon, emailIcon, profileIcon, locationIcon].forEach((icon) => {
 	icon.scale.set(iconScale, iconScale, iconScale);
       });
 
-      avatar.scene.position.set(0.40, -0.45, -1.25+2*Math.sin(elapsed/3));
+      //avatar.scene.position.set(0.40, -0.45, -1.25+2*Math.sin(elapsed/3));
       currentPhoto += delta/5;
       photoMaterial.map = gallery[Math.round(currentPhoto) % gallery.length];
 
