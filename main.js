@@ -92,10 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const portfolioItem1 = new THREE.Mesh(planeGeometry, portfolioItem1Material); 
     const portfolioItem2 = new THREE.Mesh(planeGeometry, portfolioItem2Material); 
 
-    profileIcon.position.set(-0.42, -0.80, 0);
-    webIcon.position.set(-0.14, -0.80, 0);
-    emailIcon.position.set(0.14, -0.80, 0);
-    locationIcon.position.set(0.42, -0.80, 0);
+    profileIcon.position.set(-0.54, -0.90, 0);
+    webIcon.position.set(-0.18, -0.90, 0);
+    emailIcon.position.set(0.18, -0.90, 0);
+    locationIcon.position.set(0.54, -0.90, 0);
 
     const portfolioGroup = new THREE.Group();
     //portfolioGroup.position.set(0, 0, -0.01);
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const textElement = document.createElement("div");
     const textObj = new CSS3DObject(textElement);
-    textObj.position.set(0, -1000, 0);
+    textObj.position.set(0, -750, 0);
     textObj.visible = false;
     textElement.style.background = "#FFFFFF";
     textElement.style.padding = "30px";
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	    textElement.innerHTML = "<a href='https://www.facebook.com/ipmkdpu' target='_blank'>https://www.facebook.com/ipmkdpu</a>";
 	  } else if (o === locationIcon) {
 	    textObj.visible = true;
-	    textElement.innerHTML = "<a href='https://goo.gl/maps/FEuUc3FR4byB1UGL7' target='_blank'>Кривий Ріг, пр. Гагаріна, буд. 54, ауд. 201</a>";
+	    textElement.innerHTML = "<a href='https://goo.gl/maps/FEuUc3FR4byB1UGL7' target='_blank'>Кривий Ріг, пр. Гагаріна, буд. 54, ауд. 203</a>";
 	  } else if (o == portfolioItem1) {
 		window.open("tryon.html");
 	  } else if (o == portfolioItem2) {
