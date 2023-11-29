@@ -4,6 +4,8 @@ import * as THREE from 'three';
 
 // завантаження моделей
 export const loadGLTF = (path) => {
+        const progress = document.getElementById("progress");
+
 	return new Promise( (resolve, reject) => {
 		const loader = new GLTFLoader();
 		loader.load(path, (gltf) => {
@@ -11,6 +13,12 @@ export const loadGLTF = (path) => {
 		}),
 		(xhr) => {
 			console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded from '+ path );
+			if(progress)
+			{
+				progress.innerHTML = ( xhr.loaded / xhr.total * 100 ) + '% loaded' ;
+				if (xhr.loaded == xhr.total)
+					progress.innerHTML = "";
+			}
 		},
 		(error) => {
 			reject(error);

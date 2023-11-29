@@ -1,105 +1,59 @@
+<!DOCTYPE html>
 <html>
-  <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script async src="https://unpkg.com/es-module-shims/dist/es-module-shims.js"></script>
-
-		<script type="importmap">
-		{
-		  "imports": {
-		    "three": "https://unpkg.com/three/build/three.module.js",
-		    "three/addons/": "https://unpkg.com/three/examples/jsm/",
-		    "mindar-image-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image-three.prod.js"
-		  }
-		}
-		</script>
-    <script src="./main.js" type="module"></script>
-
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Форма зворотного зв'язку</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      html, body {position: relative; margin: 0; width: 100%; height: 100%; overflow: hidden}
-
-      #container {
-	width: 100vw;
-	height: 100vh;
-	position: relative;
-	overflow: hidden;
-      }
-
-      #scanning {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	background: transparent;
-	z-index: 2;
-      }
-      @media (min-aspect-ratio: 1/1) {
-	#scanning .inner {
-	  width: 50vh;
-	  height: 70vh;
-	}
-      }
-      @media (max-aspect-ratio: 1/1) {
-	#scanning .inner {
-	  width: 80vw;
-	  height: 112vw;
-	}
-      }
-
-      #scanning .inner {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-
-	background:
-	  linear-gradient(to right, white 10px, transparent 10px) 0 0,
-	  linear-gradient(to right, white 10px, transparent 10px) 0 100%,
-	  linear-gradient(to left, white 10px, transparent 10px) 100% 0,
-	  linear-gradient(to left, white 10px, transparent 10px) 100% 100%,
-	  linear-gradient(to bottom, white 10px, transparent 10px) 0 0,
-	  linear-gradient(to bottom, white 10px, transparent 10px) 100% 0,
-	  linear-gradient(to top, white 10px, transparent 10px) 0 100%,
-	  linear-gradient(to top, white 10px, transparent 10px) 100% 100%;
-	background-repeat: no-repeat;
-	background-size: 40px 40px;
-      }
-
-      #scanning.hidden {
-	display: none;
-      }
-
-      #scanning img {
-	opacity: 0.6;
-	width: 90%;
-	align-self: center;
-      }
-
-      #scanning .inner .scanline {
-	position: absolute;
-	width: 100%;
-	height: 10px;
-	background: white;
-	animation: move 2s linear infinite;
-      }
-
-      @keyframes move {
-	0%, 100% { top: 0% }
-	50% { top: calc(100% - 10px) }
-      }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label,
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            width: auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
-  </head>
-  <body>
-    <div id="scanning" class="hidden">
-      <div class="inner">
-	<img src="assets/front.png"/>
-	<div class="scanline"></div>
-      </div>
-    </div>
+</head>
+<body>
+    <form action="https://formspree.io/f/mleyypll" method="POST" onsubmit="redirectToVader()">
+        <label for="name">Ім'я:</label><br>
+        <input type="text" id="name" name="name"><br>
+        
+        <label for="education">Місце навчання/роботи:</label><br>
+        <input type="text" id="education" name="education"><br>
+        
+        <label for="phone">Номер телефону:</label><br>
+        <input type="text" id="phone" name="phone"><br><br>
+        
+        <label for="email">E-mail:</label><br>
+        <input type="text" id="phone" name="email"><br><br>
+        
+        <input type="submit" value="Зареєструватись">
+    </form>
 
-    <div id="container"></div>
-  </body>
+    <script>
+        function redirectToVader() {
+            window.open('https://ssemerikov.github.io/ipmcal/index2.html', '_blank');
+        }
+    </script>
+</body>
 </html>

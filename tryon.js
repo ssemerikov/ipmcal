@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const glassesAnchor = mindarThree.addAnchor(6);
 		glassesAnchor.group.add(glasses.scene);
       
-		const glasses2 = await loadGLTF('https://raw.githubusercontent.com/hiukim/mind-ar-js/master/examples/face-tracking/assets/glasses2/scene.gltf');
+		const glasses2 = await loadGLTF('./assets/glasses2/scene.gltf');
 
 		glasses2.scene.rotation.set(0, -90*Math.PI/180, 0);
 		glasses2.scene.scale.set(0.52, 0.52, 0.52);
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		glasses2Anchor.group.add(glasses2.scene);
       
 
-		const hat1 = await loadGLTF('https://raw.githubusercontent.com/hiukim/mind-ar-js/master/examples/face-tracking/assets/hat/scene.gltf');
+		const hat1 = await loadGLTF('./assets/hat/scene.gltf');
 
 		hat1.scene.scale.set(0.35, 0.35, 0.35);
 		hat1.scene.position.set(0, 1, -0.5);
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const hat1Anchor = mindarThree.addAnchor(10);
 		hat1Anchor.group.add(hat1.scene);
       
-		const hat2 = await loadGLTF('https://raw.githubusercontent.com/hiukim/mind-ar-js/master/examples/face-tracking/assets/hat2/scene.gltf');
+		const hat2 = await loadGLTF('./assets/hat2/scene.gltf');
 
 		hat2.scene.position.set(0, -0.2, -0.5);
 		hat2.scene.scale.set(0.008, 0.008, 0.008);
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		hat2Anchor.group.add(hat2.scene);
 
 
-		const earringLeft = await loadGLTF('https://raw.githubusercontent.com/hiukim/mind-ar-js/master/examples/face-tracking/assets/earring/scene.gltf');
+		const earringLeft = await loadGLTF('./assets/earring/scene.gltf');
 
 		earringLeft.scene.rotation.set(-0.1*Math.PI/180, 0, 0);
 		earringLeft.scene.scale.set(0.05, 0.05, 0.05);
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const earringLeftAnchor = mindarThree.addAnchor(127);
 		earringLeftAnchor.group.add(earringLeft.scene);
       
-		const earringRight = await loadGLTF('https://raw.githubusercontent.com/hiukim/mind-ar-js/master/examples/face-tracking/assets/earring/scene.gltf');
+		const earringRight = await loadGLTF('./assets/earring/scene.gltf');
 
 		earringRight.scene.rotation.set(0.1*Math.PI/180, 0, 0);
 		earringRight.scene.scale.set(0.05, 0.05, 0.05);
